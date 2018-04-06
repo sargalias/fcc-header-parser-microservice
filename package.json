@@ -1,0 +1,22 @@
+{
+  "name": "fcc-header-parser-ms",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spyros Argalias",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sargalias/fcc-header-parser-microservice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sargalias/fcc-header-parser-microservice/issues"
+  },
+  "homepage": "https://github.com/sargalias/fcc-header-parser-microservice#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
