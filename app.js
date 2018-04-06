@@ -1,5 +1,4 @@
 const express = require('express');
-const accepts = require('accepts');
 const path = require('path');
 
 const app = express();
