@@ -8,7 +8,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/whoami', (req, res) => {
     let data = {};
 
-    data.ipaddress = req.connection.remoteAddress;
+    data.ipaddress = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
 
     let languages = req.headers['accept-language'];
     if (languages) {
