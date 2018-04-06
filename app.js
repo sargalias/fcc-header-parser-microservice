@@ -1,7 +1,10 @@
 const express = require('express');
 const accepts = require('accepts');
+const path = require('path');
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/whoami', (req, res) => {
     let data = {};
