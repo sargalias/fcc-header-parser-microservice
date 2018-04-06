@@ -3,7 +3,7 @@ const accepts = require('accepts');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/api/whoami', (req, res) => {
     let data = {};
 
     data.ipaddress = req.connection.remoteAddress;
