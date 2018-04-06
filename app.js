@@ -8,17 +8,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/whoami', (req, res) => {
     let data = {};
 
+    // IP address
     data.ipaddress = req.headers['x-forwarded-for'] ||
         req.ip ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
 
+    // Languages
     let languages = req.headers['accept-language'];
     if (languages) {
         data.language = languages.split(',')[0];
     }
 
+    // Operating system
     let software = req.headers['user-agent'].match(/\(([^)]+)\)/);
     if (software) {
         data.software = software[1];
